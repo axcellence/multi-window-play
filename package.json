@@ -13,6 +13,7 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "@types/dropzone": "^5.7.8",
     "dropzone": "^6.0.0-beta.2"
   }
 }
