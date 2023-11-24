@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color-scheme: light dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -10,14 +11,36 @@
 }
 
 body {
-  margin: 0;;
+  margin: 0;
+}
+
+#app button {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
 }
 
 img {
+  pointer-events: none;
   position: fixed;
   top: var(--screenTop, 0);
   left: var(--screenLeft, 0);
   width: var(--screenWidth, 100%);
   height: var(--screenHeight, 100%);
   object-fit: cover;
+}
+
+.dropzone {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.dropzone.dz-drag-hover {
+  border: none;
+  background-color: rgba(76, 0, 255, 0.1);
 }
