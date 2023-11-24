@@ -14,10 +14,24 @@ body {
   margin: 0;
 }
 
-#app button {
+.reset-button {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
+  z-index: 10;
+}
+
+.open-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 6rem;
+  z-index: 10;
+}
+
+.kill-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 10rem;
   z-index: 10;
 }
 
