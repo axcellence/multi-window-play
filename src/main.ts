@@ -59,6 +59,7 @@ const dropzone = new Dropzone("div.my-dropzone", {
   maxFiles: 1,
   acceptedFiles: "image/*",
   autoProcessQueue: false,
+  // @ts-ignore
   disablePreviews: true,
   addedfile: (file: Blob) => {
     // Create a URL representing the file
