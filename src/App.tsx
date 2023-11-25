@@ -84,9 +84,9 @@ function ActionBar() {
       {!windowNameExists && (
         <>
           <ResetButton />
-          <OpenButton />
         </>
       )}
+      <OpenButton />
       {windowNameExists && <CloseWindow />}
     </div>
   );
