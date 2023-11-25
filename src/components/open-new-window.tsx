@@ -5,10 +5,14 @@ import { getWindowSize } from "../helpers";
 import { WindowIcon } from "../icons";
 import { Button } from "./button";
 
+export async function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function handleOpenMultiple(times: number) {
   for (let i = 0; i < times; i++) {
     handleOpen();
-    setTimeout(() => {}, 750);
+    wait(1000);
   }
 }
 
