@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+img {
+  pointer-events: none;
+  position: fixed;
+  top: var(--screenTop, 0);
+  left: var(--screenLeft, 0);
+  width: var(--screenWidth, 100%);
+  height: var(--screenHeight, 100%);
+  object-fit: cover;
+  max-width: none;
+}
