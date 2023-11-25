@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import "./App.css";
 import { useImageStore } from "./store";
@@ -12,7 +12,7 @@ export default function App() {
   const { imageUrl, setImageUrl } = useImageStore();
 
   const onDrop = useCallback(
-    (acceptedFiles) => {
+    (acceptedFiles: File[]) => {
       acceptedFiles.forEach((file) => {
         const reader = new FileReader();
 

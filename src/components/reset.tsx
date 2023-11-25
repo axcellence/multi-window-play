@@ -1,4 +1,3 @@
-import React from 'react';
 import { useImageStore } from '../store';
 import { Button } from './button';
 import { BackIcon } from '../icons';

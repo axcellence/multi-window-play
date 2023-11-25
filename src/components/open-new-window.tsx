@@ -1,4 +1,3 @@
-import React from "react";
 import { useKey } from "react-use";
 
 import { useImageStore } from "../store";
