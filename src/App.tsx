@@ -1,5 +1,7 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
+import { track } from "@vercel/analytics";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import { useImageStore } from "./store";
 import { useWindow } from "./use-window";
@@ -13,6 +15,7 @@ export default function App() {
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
+      track("image_dropped");
       acceptedFiles.forEach((file) => {
         const reader = new FileReader();
 
@@ -45,26 +48,29 @@ export default function App() {
   });
 
   return (
-    <main>
-      {imageUrl ? (
-        <>
-          <img className="select-none" src={imageUrl} alt="bg image" />
-          <ActionBar />
-        </>
-      ) : (
-        <div
-          className={`absolute inset-0 grid place-items-center `}
-          {...getRootProps()}
-        >
-          <input {...getInputProps()} />
-          {isDragActive ? (
-            <p>Drop the files here ...</p>
-          ) : (
-            <p>Drag 'n' drop an image (png, jpg) here</p>
-          )}
-        </div>
-      )}
-    </main>
+    <>
+      <Analytics />
+      <main>
+        {imageUrl ? (
+          <>
+            <img className="select-none" src={imageUrl} alt="bg image" />
+            <ActionBar />
+          </>
+        ) : (
+          <div
+            className={`absolute inset-0 grid place-items-center `}
+            {...getRootProps()}
+          >
+            <input {...getInputProps()} />
+            {isDragActive ? (
+              <p>Drop the files here ...</p>
+            ) : (
+              <p>Drag 'n' drop an image (png, jpg) here</p>
+            )}
+          </div>
+        )}
+      </main>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useKey } from "react-use";
+import { track } from "@vercel/analytics";
 
 import { useImageStore } from "../store";
 import { getWindowSize } from "../helpers";
@@ -17,6 +18,7 @@ function handleOpenMultiple(times: number) {
 }
 
 function handleOpen() {
+  track("window_opened");
   const windowName = crypto.randomUUID();
   useImageStore.setState({
     windowNames: [...useImageStore.getState().windowNames, windowName],
